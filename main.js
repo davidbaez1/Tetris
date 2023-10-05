@@ -269,6 +269,7 @@ iniciar_juego.addEventListener('click', event =>{
     const audio = new Audio('tetris.mp3')
     audio.volume = 0.5
     audio.play()
+    audio.loop = true;
     console.log(event)
     actualizar()
     
