@@ -264,6 +264,7 @@ function remover(){
         puntuacion += 10
     })
 }
+nuevoJuego.style.display = "none"
 iniciar_tablero()
 iniciar_juego.addEventListener('click', event =>{
     const audio = new Audio('tetris.mp3')
@@ -272,7 +273,9 @@ iniciar_juego.addEventListener('click', event =>{
     audio.loop = true;
     actualizar()
     iniciar_juego.style.display = "none"
+    nuevoJuego.style.display = "block"
 })
+
 nuevoJuego.addEventListener('click', event =>{
     location.reload()
     
