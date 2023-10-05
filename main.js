@@ -5,7 +5,7 @@ let tablero_ancho = 14;
 let tablero_alto = 30;
 let puntuacion = 0;
 
-let iniciar_juego = document.querySelector('#iniciar')
+let iniciar_juego = document.getElementById('iniciar')
 
 //botones para movil
 
@@ -270,8 +270,10 @@ iniciar_juego.addEventListener('click', event =>{
     audio.volume = 0.5
     audio.play()
     audio.loop = true;
-    console.log(event)
     actualizar()
+    iniciar_juego.style.display = "none"
+})
+nuevoJuego.addEventListener('click', event =>{
+    location.reload()
     
 })
-
