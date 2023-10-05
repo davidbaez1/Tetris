@@ -5,6 +5,8 @@ let tablero_ancho = 14;
 let tablero_alto = 30;
 let puntuacion = 0;
 
+let iniciar_juego = document.querySelector('#iniciar')
+
 //botones para movil
 
 let Up = document.getElementById('Up')
@@ -263,7 +265,7 @@ function remover(){
     })
 }
 iniciar_tablero()
-tablero.addEventListener('click', event =>{
+iniciar_juego.addEventListener('click', event =>{
     const audio = new Audio('tetris.mp3')
     audio.volume = 0.5
     audio.play()
