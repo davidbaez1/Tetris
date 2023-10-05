@@ -1,0 +1,33 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    display: grid;
+    background-color: black;
+    place-content: center;
+    height: 100vh;
+    color: #ccc;
+}
+.contenedor_botones{
+    display: none;
+}
+@media (max-width:390px){
+    .contenedor_botones{
+        display: block;
+        margin: auto;
+        padding: 10px;
+        
+    }
+    button{
+        width: 50px;
+        height: 50px;
+    }
+
+    .Up{
+        padding: 2px;
+        margin-left: 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+
+}
