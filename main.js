@@ -4,8 +4,17 @@ let tamaño_bloque = 20;
 let tablero_ancho = 14;
 let tablero_alto = 30;
 let puntuacion = 0;
-
+const  colores = [
+    null,
+    'yellow',
+    'gren',
+    'blue',
+    'pink'
+]
 let iniciar_juego = document.getElementById('iniciar')
+
+
+    
 
 //botones para movil
 
@@ -64,12 +73,11 @@ const piesas = [
 ]
 //inicializar tablero 
 function iniciar_tablero(){
-    contenido_tablero.fillStyle = '#ccc'
     contenido_tablero.fillRect(0, 0, tablero.width,tablero.height )  
     pintarTablero.forEach((row, y) =>{
         row.forEach((value, x)=>{
             if(value === 0){
-                contenido_tablero.fillStyle = 'red'
+                contenido_tablero.fillStyle = '#ccc'
                 contenido_tablero.fillRect(x, y, 1, 1)
             }
         })
@@ -97,28 +105,29 @@ function actualizar(time = 0){
     iniciar()
     requestAnimationFrame(actualizar)
 }
-
 function iniciar(){
-    contenido_tablero.fillStyle = '#ccc'
+    //contenido_tablero.fillStyle = colores[Math.floor(Math.random()*colores.length)]
     contenido_tablero.fillRect(0, 0, tablero.width,tablero.height )  
     pintarTablero.forEach((row, y) =>{
         row.forEach((value, x)=>{
             if(value === 0){
-                contenido_tablero.fillStyle = 'red'
+                contenido_tablero.fillStyle = '#ccc'
                 contenido_tablero.fillRect(x, y, 1, 1)
             }
         })
     })
+   
     piesa.forma.forEach((row, y)=>{
         row.forEach((value, x)=>{
             if(value){
-                contenido_tablero.fillStyle = 'green'
+                contenido_tablero.fillStyle = "black"
                 contenido_tablero.fillRect(x + piesa.pocision.x, y + piesa.pocision.y, 1, 1)
             }
         })
     })
-
     document.querySelector('span').innerText = puntuacion
+    document.querySelector('#puntaje_movil').innerText = puntuacion
+    
 }
 
 
@@ -228,12 +237,13 @@ function solificar(){
         row.forEach((value, x)=>{
             if(value === 1){
                 pintarTablero[y + piesa.pocision.y][x + piesa.pocision.x] = 1
+
             }
         })
     })
-
-    piesa.forma = piesas[Math.floor(Math.random()*piesas.length)]
-
+    const guardarPiesa = piesas[Math.floor(Math.random()*piesas.length)]
+    console.log(guardarPiesa)
+    piesa.forma = guardarPiesa
     piesa.pocision.x = tablero_ancho / 2 - 2
     piesa.pocision.y = 0
 
@@ -241,6 +251,7 @@ function solificar(){
         window.alert("GAME OVER")
         pintarTablero.forEach((row)=>row.fill(0))
     }
+    
 }
 //mostrar piesa siguiente 
 
