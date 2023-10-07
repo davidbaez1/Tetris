@@ -10,6 +10,43 @@ body{
 .contenedor_botones{
     display: none;
 }
+.btns{
+    padding: 10px;
+}
+
+#app{
+    display: flex;
+    gap: 50px;
+    background-color: #686868;
+    padding: 10px;
+    width: 280px;
+    height: 600px;
+}
+#marcador{
+    padding: 10px;
+    background-color: #686868;
+    width: 100px;
+    height: 100px;
+}
+#marcador section{
+    justify-content: center;
+    font-size: 1rem;
+    display: grid;
+    width: 100px;
+    height: 100px;
+    color: black;
+    padding: 10px;
+    background-color: #ccc;
+}
+#marcador span{
+    margin: auto;
+    font-size: 5rem;
+}
+#marcador_movil{
+    display: none;
+    background-color: #ccc;
+    color: black;
+}
 @media (max-width:390px){
     .contenedor_botones{
         display: block;
@@ -27,6 +64,12 @@ body{
         margin-left: 50px;
         width: 50px;
         height: 50px;
+    }
+    #marcador{
+        display: none;
+    }
+    #marcador_movil{
+        display: block;
     }
 
 
@@ -49,8 +92,18 @@ body{
         width: 50px;
         height: 50px;
     }
-
-
+    .btns{
+        display: flex;
+        gap: 10px;
+        
+    }
+    
+    #marcador{
+        display: none;
+    }
+    #marcador_movil{
+        display: block;
+    }
 }
 @media (max-width:414px){
     .contenedor_botones{
@@ -70,6 +123,11 @@ body{
         width: 50px;
         height: 50px;
     }
-
+    #marcador{
+        display: none;
+    }
+    #marcador_movil{
+        display: block;
+    }
 
 }
